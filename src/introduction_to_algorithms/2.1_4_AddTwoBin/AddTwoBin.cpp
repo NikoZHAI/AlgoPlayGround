@@ -33,10 +33,10 @@ int main()
     if (myfile.is_open()) {
 
         while(getline(myfile, line)){
-            std::vector<short> a = stringToIntegerVector(line); // Read a
+            std::vector<short> a = stringToShortVector(line); // Read a
             
             getline(myfile, line); // Read b
-            std::vector<short> b = stringToIntegerVector(line);
+            std::vector<short> b = stringToShortVector(line);
 
             n = a.size();
             
