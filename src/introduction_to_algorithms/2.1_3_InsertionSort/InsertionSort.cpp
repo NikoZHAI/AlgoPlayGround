@@ -19,13 +19,17 @@ void insertionSort(std::vector<int> &a, int order = 1){
         }
         a[j+1] = key;
     }
-    
+
     printVector(&a, n);
     std::cout << ';' << std::endl;
 }
 
 int main(void)
 {
+    /* Introduction to Algorithms - 2.1-2
+                Insertion Sort
+    */
+
     int order = 1;
     std::string filename, line;
 

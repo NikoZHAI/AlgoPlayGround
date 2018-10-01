@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm>    // std::find_if
+#include <algorithm>    // std::find_if; std::swap
 #include <sstream>
 #include <fstream>
 
