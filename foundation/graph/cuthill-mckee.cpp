@@ -16,7 +16,7 @@ using namespace algo;
 std::vector<int>
 cuthillMcKee( const UGraph &graph )
 {
-    std::vector<int> cm_order;
+    std::vector<int> cm_order;  // the Cuthill-McKee order
     if ( graph.empty() ) return cm_order;
 
     const std::size_t vertexCount = graph.vertexCount();
@@ -28,16 +28,16 @@ cuthillMcKee( const UGraph &graph )
     const auto end = visited.begin();
     auto it = begin;
 
-    // do bfs first, picking the root vertex for every disconnected parts
+    // do bfs first, picking the root vertex for every disconnected parts,
     // meanwhile, sort the adjacent vertices of each vertex in degree-ascending order
     while ( (it = all(it, end)) != end )
     {
-        int vCount = 0;
         UVertex *root = graph.vertices[ std::distance( begin, it ) ];
         Q.push( root );
         int root_deg = root->deg();
         int root_expansion = root->expansion();
         
+        int vCount = 0;     // number of unique vertices in this part of the graph
         while ( !Q.empty() )
         {
             UVertex *v = Q.front();
@@ -98,7 +98,6 @@ cuthillMcKee( const UGraph &graph )
             }
         }
     }
-
 
     return cm_order;
 }
