@@ -58,5 +58,5 @@ primMST( const wAdjList &adjList, unsigned int root )
             throw "Vertex(" + std::to_string(i) + ") is disconnected";
     }
 
-    return std::make_pair( costSum, perm );
+    return std::make_pair( costSum, std::move(perm) );
 }
